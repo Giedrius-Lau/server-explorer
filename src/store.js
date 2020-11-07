@@ -10,12 +10,12 @@ const reducer = combineReducers({
     serverList: serverListReducer,
 });
 
-const userInfoFromStorage = localStorage.getItem('userInfo')
-    ? JSON.parse(localStorage.getItem('userInfo'))
+const tokenFromStorage = localStorage.getItem('token')
+    ? JSON.parse(localStorage.getItem('token'))
     : null;
 
 const initialState = {
-    userLogin: { userInfo: userInfoFromStorage },
+    userLogin: { token: tokenFromStorage },
 };
 
 const middleware = [thunk];
