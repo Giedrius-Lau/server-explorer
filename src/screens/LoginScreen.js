@@ -4,7 +4,7 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { login } from '../actions/userActions';
 
-const LoginScreen = ({ location, history }) => {
+const LoginScreen = ({ history }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 

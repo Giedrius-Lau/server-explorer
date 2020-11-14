@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 function PrivateRoute({ component: Component }) {
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
-    console.log(userLogin);
 
     const storedToken = localStorage.getItem('token');
 

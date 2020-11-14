@@ -14,7 +14,7 @@ export const serverListReducer = (state = {}, action) => {
             return {
                 loading: false,
                 success: true,
-                order: action.payload,
+                servers: action.payload,
             };
         case SERVER_LIST_FAIL:
             return {
