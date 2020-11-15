@@ -15,22 +15,16 @@ export const getServerList = () => async (dispatch, getState) => {
             userLogin: { token },
         } = getState();
 
-        console.log(token);
-
         const config = {
             headers: {
+                'Content-Type': 'application/json',
                 Authorization: `Bearer ${token.token}`,
             },
         };
 
-        const { data } = await axios({
-            method: 'get',
-            url: 'https://playground.tesonet.lt/v1/servers',
-            config,
-        });
+        const { data } = await axios.get('https://playground.tesonet.lt/v1/servers', config);
 
         console.log(data);
-
         dispatch({
             type: SERVER_LIST_SUCCESS,
             payload: data,

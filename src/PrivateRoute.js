@@ -4,17 +4,17 @@ import { useSelector } from 'react-redux';
 
 function PrivateRoute({ component: Component }) {
     const userLogin = useSelector((state) => state.userLogin);
-    const { userInfo } = userLogin;
+    const { token } = userLogin;
 
     const storedToken = localStorage.getItem('token');
 
     return (
         <Route
             render={(props) => {
-                if (userInfo || storedToken) {
+                if (token || storedToken) {
                     return <Component {...props} />;
                 }
-                return <Redirect to={{ pathname: '/', state: { from: props.location } }} />;
+                return <Redirect to={{ pathname: '/' }} />;
             }}
         />
     );
